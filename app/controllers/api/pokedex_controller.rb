@@ -1,6 +1,6 @@
 class Api::PokedexController < Api::ApiController
   def create
-    PokedexService.new.generate_kalos_pokemon
+    GeneratePokemonJob.perform_later
     render json: { message: 'Request Accepted' }, status: :accepted
   end
 end
