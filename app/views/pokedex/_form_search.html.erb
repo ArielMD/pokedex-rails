@@ -1,0 +1,7 @@
+<%= form_with url: "/pokedex", method: :get, class: "form-search" do |form| %>
+  <div class="form-group">
+    <%= form.label :query, "Buscador de pokemon" %>
+    <%= form.text_field :query, class: "input-search", placeholder: "Encuentra tu pokemon favorito" %>
+    <%= form.submit "search", class: "submit-search" %>
+  </div>
+<% end %>

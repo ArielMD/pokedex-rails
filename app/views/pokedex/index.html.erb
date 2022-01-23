@@ -1,0 +1,7 @@
+<%= render "form_search"%>
+
+<div class="pokemon-container">
+	<% @pokemons.each do |pokemon| %>
+		<%= render "pokemon_card", pokemon: pokemon %>
+	<% end %>
+</div>
