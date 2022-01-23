@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   end
 
   resources :pokedex, only: %i[index show]
+
+  root 'pokedex#index'
 end

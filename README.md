@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Versión de ruby 2.7.2
+versión de rails 6.1.4.4
 
-Things you may want to cover:
+### Instalación 
 
-* Ruby version
+Instalar gemas 
+```
+bundle install
+```
 
-* System dependencies
+Instalar dependencias de JS 
+``` 
+bundle exec rake webpacker:instal
+```
 
-* Configuration
+Compilar código 
+```
+bundle exec rake webpacker:compile
+```
 
-* Database creation
+Crear base de datos
+```
+rails db:create
+```
 
-* Database initialization
+Ejecutar migraciones a la base de datos
+```
+rails db:migrate
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Ejecución 
+Generar datos a través de un API
+```
+post "http://localhost:3000/api/pokedex"
+```
