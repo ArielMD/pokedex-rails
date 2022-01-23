@@ -1,6 +1,6 @@
 class PokemonRepository
-  def all
-    Pokemon.all
+  def paginate(page)
+    Pokemon.paginate(page: page, per_page: 16)
   end
 
   def show(id)
