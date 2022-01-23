@@ -1,5 +1,7 @@
 <div class="pokemon-card">
-  <img class="pokemon-image" src=<%= pokemon.thumbnail_image %> alt="pokemon">
+  <%=link_to pokedex_path(pokemon), class: "image-link" do %>
+    <img class="pokemon-image" src=<%= pokemon.thumbnail_image %> alt="pokemon">
+  <% end %>
   <p class="pokemon-number">N.<%= pokemon.number %></p>
   <h5 class="pokemon-name"><%= pokemon.name %></h5>
   <div class="abilities">

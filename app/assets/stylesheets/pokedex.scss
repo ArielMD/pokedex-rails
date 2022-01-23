@@ -78,6 +78,115 @@
     }
   }
 }
+
+.pokemon-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+  width: 80%;
+
+  .name {
+    font-size: 35px;
+    span {
+      margin-left: 0.3rem;
+      color: #616161;
+    }
+  }
+}
+
+.return {
+  align-self: flex-start;
+  padding: 0.6rem;
+  background-color: red;
+  border-radius: 0.3rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.pokemon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.pokemon-image {
+  width: 40%;
+}
+
+.pokemon-info {
+  background-color: #51c4e7;
+  padding: 2rem 0;
+  border-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  width: 48%;
+
+  h3 {
+    margin: 0 0 0.5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .info-item {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    text-align: center;
+
+    .attribute-title {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 0.3rem;
+    }
+
+    .attribute-content {
+      color: #000;
+      font-size: 20px;
+
+      .abilities {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.types,
+.weaknesses {
+  padding: 2rem;
+  border-radius: 1rem;
+  margin: 0.5rem 0;
+  width: 40%;
+  flex-wrap: wrap;
+
+  h3 {
+    margin: 0 0 0.5rem 0;
+    width: 100%;
+  }
+
+  span {
+    background-color: #8a9092;
+    font-size: 12px;
+    padding: 0.2rem 0.3rem;
+    margin: 0.2rem 0.2rem 0 0;
+    border-radius: 4px;
+    color: #fff;
+  }
+}
+
+.types {
+  background-color: #ee6b2f;
+}
+
+.weaknesses {
+  background-color: #9bcc50;
+}
+
 $breakpoint-desktop: 1024px;
 $breakpoint-tablet: 768px;
 $breakpoint-mobile: 509px;
@@ -85,6 +194,31 @@ $breakpoint-mobile: 509px;
 @media (max-width: $breakpoint-desktop) {
   .pokemon-card {
     width: 32%;
+  }
+
+  .pokemon-wrapper {
+    flex-direction: column;
+  }
+
+  .pokemon-image {
+    width: 60%;
+  }
+
+  .pokemon-info {
+    width: 70%;
+    padding: 2rem;
+  }
+
+  .types,
+  .weaknesses {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    h3 {
+      width: 100%;
+      text-align: center;
+    }
   }
 }
 
@@ -102,10 +236,37 @@ $breakpoint-mobile: 509px;
   .pokemon-card {
     width: 49%;
   }
+
+  .pokemon-info {
+    .info-item {
+      .attribute-title {
+        font-size: 12px;
+      }
+
+      .attribute-content {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .types,
+  .weaknesses {
+    width: 70%;
+  }
 }
 
 @media (max-width: $breakpoint-mobile) {
   .pokemon-card {
     width: 99%;
+  }
+
+  .pokemon-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .info-item {
+      margin: 0.5rem 0;
+    }
   }
 }
