@@ -22,10 +22,14 @@ RSpec.describe PokemonRepository, type: :model do
   end
 
   context 'with valid params' do
-    it 'should list all pokemon' do
-      expect(@pokemon_repository.all.count).to be(0)
+    it 'should list all pokemon with pagination' do
+      expect(@pokemon_repository.paginate(1).count).to be(0)
       @pokemon_repository.create(valid_params)
-      expect(@pokemon_repository.all.count).to be(1)
+      expect(@pokemon_repository.paginate(1).count).to be(1)
+    end
+
+    it 'should return an empty array if pagination number does not exist' do
+      expect(@pokemon_repository.paginate(1000).count).to be(0)
     end
 
     it 'should find a pokemon by id' do
@@ -65,6 +69,12 @@ RSpec.describe PokemonRepository, type: :model do
       expect do
         @pokemon_repository.create(valid_params)
       end.to raise_error(NoMethodError)
+    end
+
+    it 'should throw error if page param doesnt exist' do
+      expect do
+        @pokemon_repository.paginate(-2)
+      end.to raise_error(RangeError)
     end
   end
 end

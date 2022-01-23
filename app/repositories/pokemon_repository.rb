@@ -28,6 +28,20 @@ class PokemonRepository
     pokemon.update(pokemon_params)
   end
 
+  def search(query, page)
+    pokemon_number = Integer(query, exception: false)
+
+    return paginate(page) if query == ''
+
+    query = "%#{query}%"
+
+    if pokemon_number
+      Pokemon.where('number Like ?', query).paginate(page: page, per_page: 16)
+    else
+      Pokemon.where('collectibles_slug Like ? OR name Like ?', query, query).paginate(page: page, per_page: 16)
+    end
+  end
+
   private
 
   def pokemon_params(params)

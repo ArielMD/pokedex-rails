@@ -2,7 +2,11 @@ class PokedexController < ApplicationController
   before_action :set_pokemon_repository, only: %i[index show]
 
   def index
-    @pokemons = @pokemon_repository.paginate(params[:page])
+    @pokemons = if params[:query]
+                  @pokemon_repository.search(params[:query], params[:page])
+                else
+                  @pokemon_repository.paginate(params[:page])
+                end
   end
 
   def show
