@@ -1,48 +1,48 @@
 <div class="pokemon-description">
-	<%= link_to pokedex_index_path, class: "return" do %>
-		&#171; regresar
-	<% end %>
-	<div class="name"><%= @pokemon.name %><span>N.<%= @pokemon.number %></span></div>
-	<div class="pokemon-wrapper">
-		<img class="pokemon-image" src=<%= @pokemon.thumbnail_image %> alt=<%= @pokemon.thumbnail_alt_text %>>
-		<div class="pokemon-info">
-			<h3>Información</h3>
-			<div class="info-item">
-				<span class="attribute-title">Altura</span>
-				<span class="attribute-content"><%= @pokemon.height %> metros</span>
-			</div>
-			<div class="info-item">
-				<span class="attribute-title">Categoría</span>
-				<span class="attribute-content">No disponible</span>
-			</div>
-			<div class="info-item">
-				<span class="attribute-title">Peso</span>
-				<span class="attribute-content"><%= @pokemon.weight %> kilogramos</span>
-			</div>
-			<div class="info-item">
-				<span class="attribute-title">Habilidad</span>
-				<span class="attribute-content">
-					<div class="abilities">
-						<% @pokemon.abilities.each do |ability| %>
-							<span>&#8226;<%= ability.name %></span>
-						<% end %>
-					</div>
-				</span>
-			</div>
-		</div>
-	</div>
-	<div class="pokemon-wrapper">
-		<div class="types">
-			<h3>Tipo</h3>
-			<% @pokemon.types.each do |type| %>
-				<span><%= type.name %></span>
-			<% end %>
-		</div>
-		<div class="weaknesses">
-			<h3>Debilidad</h3>
-			<% @pokemon.weaknesses.each do |weakness| %>
-				<span><%= weakness.name %></span>
-			<% end %>
-		</div>
-	</div>
+  <%= link_to pokedex_index_path, class: "return" do %>
+    &#171; regresar
+  <% end %>
+  <div class="name"><%= @pokemon.name %><span>N.<%= @pokemon.number %></span></div>
+  <div class="pokemon-wrapper">
+    <img class="pokemon-image" src=<%= @pokemon.thumbnail_image %> alt=<%= @pokemon.thumbnail_alt_text %>>
+    <div class="pokemon-info">
+      <h3>Información</h3>
+      <div class="info-item">
+        <span class="attribute-title">Altura</span>
+        <span class="attribute-content"><%= @pokemon.height %> metros</span>
+      </div>
+      <div class="info-item">
+        <span class="attribute-title">Categoría</span>
+        <span class="attribute-content">No disponible</span>
+      </div>
+      <div class="info-item">
+        <span class="attribute-title">Peso</span>
+        <span class="attribute-content"><%= @pokemon.weight %> kilogramos</span>
+      </div>
+      <div class="info-item">
+        <span class="attribute-title">Habilidad</span>
+        <span class="attribute-content">
+          <div class="abilities">
+            <% @pokemon.abilities.each do |ability| %>
+              <span>&#8226;<%= ability.name %></span>
+            <% end %>
+          </div>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="pokemon-wrapper">
+    <div class="types">
+      <h3>Tipo</h3>
+      <% @pokemon.types.each do |type| %>
+        <span><%= type.name %></span>
+      <% end %>
+    </div>
+    <div class="weaknesses">
+      <h3>Debilidad</h3>
+      <% @pokemon.weaknesses.each do |weakness| %>
+        <span><%= weakness.name %></span>
+      <% end %>
+    </div>
+  </div>
 </div> 
